@@ -32,6 +32,33 @@
             style="@style/main_rb"
             android:checked="true"
             android:textColor="@drawable/main_rb_txt"
+            android:text = "@string/label_constellation"
+            android:drawableTop="@drawable/main_rb_star"/>
+        <RadioButton
+            android:id="@+id/main_rb_match"
+            style="@style/main_rb"
+            android:checked="false"
+            android:text = "@string/label_match"
+            android:drawableTop="@drawable/main_rb_star"/>
+        <RadioButton
+            android:id="@+id/main_rb_luck"
+            style="@style/main_rb"
+            android:checked="false"
+            android:text = "@string/label_luck"
+            android:drawableTop="@drawable/main_rb_star"/>
+        <RadioButton
+            android:id="@+id/main_rb_me"
+            style="@style/main_rb"
+            android:checked="false"
+            android:text = "@string/label_me"
             android:drawableTop="@drawable/main_rb_star"/>
     </RadioGroup>
+<!--    中间部分使用布局进行占位，会去使用Fragment替换这块布局-->
+    <LinearLayout
+        android:id="@+id/main_layout_center"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/main_tv_title"
+        android:layout_above="@+id/main_rg"/>
 </RelativeLayout>

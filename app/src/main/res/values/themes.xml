@@ -29,8 +29,8 @@
         <item name = "android:layout_weight">1</item>
         <item name = "android:button">@null</item>
         <item name = "android:drawablePadding">2sp</item>
-        <item name = "android:text">@string/label_constellation</item>
         <item name = "android:textSize">12sp</item>
+        <item name="android:textColor">@drawable/main_rb_txt</item>
         <item name = "android:gravity">center</item>
     </style>
 </resources>
