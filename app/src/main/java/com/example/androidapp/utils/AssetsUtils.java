@@ -75,7 +75,7 @@ public class AssetsUtils {
         List<StarInfoBean.StarinfoBean> starinfo = starInfoBean.getStarinfo();
         for(int i = 0;i < starinfo.size(); i++){
             String logoname = starinfo.get(i).getLogoname();
-            String filename = "xzlogo"+logoname+".png";
+            String filename ="xzlogo/"+logoname+".png";
             Bitmap logoBm = getBitmapFromAssets(context,filename);
             logoImgMap.put(logoname,logoBm);
 
