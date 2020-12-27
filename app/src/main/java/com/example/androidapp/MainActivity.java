@@ -35,9 +35,13 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
 //        创建碎片对象
 //        val gameFragment = new Fragment();
         starFrag = new StarFragment();
+        starFrag.setArguments(bundle);
         luckFrag = new LuckFragment();
+        luckFrag.setArguments(bundle);
         matchFrag = new MatchFragment();
+        matchFrag.setArguments(bundle);
         meFrag = new MeFragment();
+        meFrag.setArguments(bundle);
 //        将四个Fragment进行动态加载，一起加载到布局当中
         iniFragmentPage();
     }
@@ -47,6 +51,7 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
         String jsonFromAssets = AssetsUtils.getJsonFromAssets(this, "xzcontent\\xzcontent.json");
         Gson gson = new Gson();
         StarInfoBean starInfoBean = gson.fromJson(jsonFromAssets, StarInfoBean.class);
+        AssetsUtils.saveBitmapAssets(this,starInfoBean);
         return starInfoBean;
     }
 
