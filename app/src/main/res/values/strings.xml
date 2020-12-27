@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">AndroidApp</string>
+    <string name="passtime">通关时间：0</string>
+</resources>
