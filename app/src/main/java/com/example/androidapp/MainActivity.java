@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
+import com.example.androidapp.utils.AssetsUtils;
+
 public class MainActivity extends AppCompatActivity implements  RadioGroup.OnCheckedChangeListener{
 
     RadioGroup mainRg;
@@ -23,6 +25,9 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
 //        设置监听
         mainRg = findViewById(R.id.main_rg);
         mainRg.setOnCheckedChangeListener(this);
+
+//        将在星座相关数据  /assets/xzcontent/xzcontent.json
+        String json = loadData();
 //        创建碎片对象
 //        val gameFragment = new Fragment();
         starFrag = new StarFragment();
@@ -31,6 +36,12 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
         meFrag = new MeFragment();
 //        将四个Fragment进行动态加载，一起加载到布局当中
         iniFragmentPage();
+    }
+
+//    读取assets文件夹下的xzcontent.json文件
+    private String loadData() {
+        String jsonFromAssets = AssetsUtils.getJsonFromAssets(this, "xzcontent\\xzcontent.json");
+        return jsonFromAssets;
     }
 
     /**
