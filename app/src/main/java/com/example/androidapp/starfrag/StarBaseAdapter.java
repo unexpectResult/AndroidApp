@@ -30,22 +30,6 @@ public class StarBaseAdapter extends BaseAdapter {
 
     Map<String, Bitmap> logoMap;
 
-    public Context getContext() {
-        return context;
-    }
-
-    public void setContext(Context context) {
-        this.context = context;
-    }
-
-    public List<StarInfoBean.StarinfoBean> getmDatas() {
-        return mDatas;
-    }
-
-    public void setmDatas(List<StarInfoBean.StarinfoBean> mDatas) {
-        this.mDatas = mDatas;
-    }
-
     @Override
     public int getCount() {
         return mDatas.size();
@@ -78,7 +62,7 @@ public class StarBaseAdapter extends BaseAdapter {
         String logoname = bean.getLogoname();
         Bitmap bitmap = logoMap.get(logoname);
         holder.iv.setImageBitmap(bitmap);
-        return null;
+        return convertView;
     }
 
 //    对于item 当中的控件进行声明和初始化的操作

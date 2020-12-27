@@ -3,6 +3,7 @@ package com.example.androidapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,8 +12,11 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.androidapp.bean.StarInfoBean;
+import com.example.androidapp.starfrag.StarFragment;
 import com.example.androidapp.utils.AssetsUtils;
 import com.google.gson.Gson;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements  RadioGroup.OnCheckedChangeListener{
 
@@ -20,7 +24,12 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
     //声明四个按钮对应的Fragment对象
     Fragment starFrag,luckFrag,matchFrag,meFrag;
     private FragmentManager manager;
-
+    //声明图片数组
+    int[] imgIds = {R.mipmap.pic_guanggao,R.mipmap.pic_star};
+//    声明ViewPager的数据源
+    List<ImageView> ivList;
+//    声明管理指示器小圆点的集合
+    List<ImageView> pointList;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);

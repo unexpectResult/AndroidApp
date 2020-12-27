@@ -3,8 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".StarFragment"
-    android:background="@color/purple_200">
+    tools:context=".starfrag.StarFragment"
+    android:background="@color/bgyellow">
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/starfrag_vp"

@@ -13,24 +13,33 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
     </style>
-<!--    将布局当中统一的属性信息进行定义-->
-<!--    定义首页面当中四个RadioButton的属性星系-->
-<!--    android:layout_width="0sp"-->
-<!--    android:layout_height="match_parent"-->
-<!--    android:layout_weight="1"-->
-<!--    android:button="@null"-->
-<!--    android:drawablePadding="2sp"-->
-<!--    android:text="@string/label_constellation"-->
-<!--    android:gravity="center"-->
-<!--    android:textSize="12sp"-->
-<!--    <style name="main_rb">-->
-<!--        <item name = "android:layout_width">0sp</item>-->
-<!--        <item name = "android:layout_height">match_parent</item>-->
-<!--        <item name = "android:layout_weight">1</item>-->
-<!--        <item name = "android:button">@null</item>-->
-<!--        <item name = "android:drawablePadding">2sp</item>-->
-<!--        <item name = "android:textSize">12sp</item>-->
-<!--        <item name="android:textColor">@drawable/main_rb_txt</item>-->
-<!--        <item name = "android:gravity">center</item>-->
-<!--    </style>-->
+
+    <style name="TranslucentTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="TranslucentTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="TranslucentTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+    <!--    将布局当中统一的属性信息进行定义-->
+    <!--    定义首页面当中四个RadioButton的属性星系-->
+    <!--    android:layout_width="0sp"-->
+    <!--    android:layout_height="match_parent"-->
+    <!--    android:layout_weight="1"-->
+    <!--    android:button="@null"-->
+    <!--    android:drawablePadding="2sp"-->
+    <!--    android:text="@string/label_constellation"-->
+    <!--    android:gravity="center"-->
+    <!--    android:textSize="12sp"-->
+    <!--    <style name="main_rb">-->
+    <!--        <item name = "android:layout_width">0sp</item>-->
+    <!--        <item name = "android:layout_height">match_parent</item>-->
+    <!--        <item name = "android:layout_weight">1</item>-->
+    <!--        <item name = "android:button">@null</item>-->
+    <!--        <item name = "android:drawablePadding">2sp</item>-->
+    <!--        <item name = "android:textSize">12sp</item>-->
+    <!--        <item name="android:textColor">@drawable/main_rb_txt</item>-->
+    <!--        <item name = "android:gravity">center</item>-->
+    <!--    </style>-->
 </resources>

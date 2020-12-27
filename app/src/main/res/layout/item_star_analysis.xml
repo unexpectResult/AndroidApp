@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingLeft="30sp"
+    android:paddingRight="30sp"
+    android:paddingBottom="10sp"
+    android:paddingTop="10sp"
+    android:background="@color/bgyellow">
+    <TextView
+        android:id="@+id/itemstar_tv_title"
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:paddingLeft="10sp"
+        android:textSize="18sp"
+        android:text="性格特点 :"/>
+
+    <TextView
+        android:id="@+id/itemstar_tv_content"
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="left"
+        android:background="@color/lightpink"
+        android:paddingLeft="10sp"
+        android:textSize="18sp"
+        android:text="幽默大方"
+        android:textColor="@color/white"/>
+</LinearLayout>
