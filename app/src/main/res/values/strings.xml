@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">AndroidApp</string>
     <string name="passtime">通关时间：0</string>
+    <string name="appName">星梦缘</string>
+    <string name="label_constellation">星座</string>
+    <string name="label_match">配对</string>
+    <string name="label_luck">运势</string>
+    <string name="label_me">我</string>
 </resources>
