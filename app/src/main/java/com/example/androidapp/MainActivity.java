@@ -48,7 +48,8 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
 
 //    读取assets文件夹下的xzcontent.json文件
     private StarInfoBean loadData() {
-        String jsonFromAssets = AssetsUtils.getJsonFromAssets(this, "xzcontent\\xzcontent.json");
+        String jsonFromAssets = AssetsUtils.getJsonFromAssets(this, "xzcontent/xzcontent.json");
+        System.out.println(jsonFromAssets);
         Gson gson = new Gson();
         StarInfoBean starInfoBean = gson.fromJson(jsonFromAssets, StarInfoBean.class);
         AssetsUtils.saveBitmapAssets(this,starInfoBean);

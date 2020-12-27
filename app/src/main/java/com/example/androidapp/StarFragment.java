@@ -3,26 +3,30 @@ package com.example.androidapp;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
+import androidx.viewpager.widget.ViewPager;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.GridView;
+import android.widget.LinearLayout;
+
+import com.example.androidapp.bean.StarInfoBean;
+import com.example.androidapp.starfrag.StarBaseAdapter;
+
+import java.io.Serializable;
+import java.util.List;
 
 /**
- * A simple {@link Fragment} subclass.
- * Use the {@link StarFragment#newInstance} factory method to
- * create an instance of this fragment.
+ * 星座Fragment
+ * 包含ViewPaper和GridView
  */
 public class StarFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    ViewPager starVp;
+    GridView starGv;
+    LinearLayout pointLayout;
+    private List<StarInfoBean.StarinfoBean> mDadas;
 
     public StarFragment() {
         // Required empty public constructor
@@ -39,26 +43,34 @@ public class StarFragment extends Fragment {
     // TODO: Rename and change types and number of parameters
     public static StarFragment newInstance(String param1, String param2) {
         StarFragment fragment = new StarFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
         return fragment;
     }
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_star, container, false);
+        View view =  inflater.inflate(R.layout.fragment_star, container, false);
+        initView(view);
+        Bundle bundle = getArguments();
+        StarInfoBean infoBean = (StarInfoBean)bundle.getSerializable("info");
+        mDadas = infoBean.getStarinfo();//获取关于星座信息的集合数据
+        //        创建适配器
+        StarBaseAdapter starBaseAdapter = new StarBaseAdapter(getContext(), mDadas);
+        starGv.setAdapter(starBaseAdapter);
+        return view;
+
+    }
+
+//    初始化控件的操作
+    private void initView(View view) {
+        starVp = view.findViewById(R.id.starfrag_vp);
+        starGv = view.findViewById(R.id.starfrag_gv);
+//        pointLayout = view.findViewById(R.id.starfrag_Layout);
     }
 }

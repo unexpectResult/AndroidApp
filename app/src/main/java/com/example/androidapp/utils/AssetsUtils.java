@@ -35,10 +35,10 @@ public class AssetsUtils {
                     break;
                 }
                 baos.write(buf,0,hasRead);
-                String msg = baos.toString();
-                open.close();
-                return msg;
             }
+            String msg = baos.toString();
+            open.close();
+            return msg;
 
         } catch (IOException e) {
             e.printStackTrace();
