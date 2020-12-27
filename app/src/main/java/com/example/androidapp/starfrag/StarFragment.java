@@ -1,6 +1,7 @@
 package com.example.androidapp.starfrag;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,12 +13,14 @@ import android.os.Message;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 import com.example.androidapp.R;
-import com.example.androidapp.bean.StarInfoBean;
+import com.example.androidapp.StarAnalysisActivity;
+import com.example.androidapp.bean.StarInfo;
 import com.example.androidapp.starfrag.StarBaseAdapter;
 
 import java.io.Serializable;
@@ -33,7 +36,7 @@ public class StarFragment extends Fragment {
     ViewPager starVp;
     GridView starGv;
     LinearLayout pointLayout;
-    private List<StarInfoBean.StarinfoBean> mDadas;
+    private List<StarInfo.StarinfoBean> mDadas;
 //    声明图片数组
     int []imgIds = {R.mipmap.pic_guanggao,R.mipmap.pic_star};
 //    声明ViewPaper的数据源
@@ -69,18 +72,31 @@ public class StarFragment extends Fragment {
         initView(view);
 
         Bundle bundle = getArguments();
-        StarInfoBean infoBean = (StarInfoBean)bundle.getSerializable("info");
+        StarInfo infoBean = (StarInfo)bundle.getSerializable("info");
         mDadas = infoBean.getStarinfo();//获取关于星座信息的集合数据
         System.out.println(mDadas);
         //        创建适配器
         StarBaseAdapter starBaseAdapter = new StarBaseAdapter(getContext(), mDadas);
         initPager();
         setVPListener();
+        setGVListener();
 //        每2s发送一次消息
         handler.sendEmptyMessageDelayed(1,2000);
         starGv.setAdapter(starBaseAdapter);
         return view;
 
+    }
+//    设置GridView的监听事件函数
+    private void setGVListener() {
+        starGv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                StarInfo.StarinfoBean starinfoBean = mDadas.get(position);
+                Intent intent = new Intent(getContext(), StarAnalysisActivity.class);
+                intent.putExtra("star",starinfoBean);
+                startActivity(intent);
+            }
+        });
     }
 
     //设置viewpaper的监听器函数

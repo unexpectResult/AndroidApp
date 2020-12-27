@@ -5,7 +5,7 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
-import com.example.androidapp.bean.StarInfoBean;
+import com.example.androidapp.bean.StarInfo;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
@@ -69,10 +69,10 @@ public class AssetsUtils {
      * 将Assets文件夹当中的图片一起读取，放置到内存当中，便于管理
      *
      */
-    public static void saveBitmapAssets(Context context, StarInfoBean starInfoBean){
+    public static void saveBitmapAssets(Context context, StarInfo starInfoBean){
         logoImgMap = new HashMap<>();
         contentlogoImgMap = new HashMap<>();
-        List<StarInfoBean.StarinfoBean> starinfo = starInfoBean.getStarinfo();
+        List<StarInfo.StarinfoBean> starinfo = starInfoBean.getStarinfo();
         for(int i = 0;i < starinfo.size(); i++){
             String logoname = starinfo.get(i).getLogoname();
             String filename ="xzlogo/"+logoname+".png";

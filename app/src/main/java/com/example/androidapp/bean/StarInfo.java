@@ -3,7 +3,7 @@ package com.example.androidapp.bean;
 import java.io.Serializable;
 import java.util.List;
 
-public class StarInfoBean implements Serializable {
+public class StarInfo implements Serializable {
 
     private List<StarinfoBean> starinfo;
 

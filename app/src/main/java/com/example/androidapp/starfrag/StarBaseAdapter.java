@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.example.androidapp.R;
-import com.example.androidapp.bean.StarInfoBean;
+import com.example.androidapp.bean.StarInfo;
 import com.example.androidapp.utils.AssetsUtils;
 
 import java.util.List;
@@ -20,9 +20,9 @@ import de.hdodenhof.circleimageview.CircleImageView;
 
 public class StarBaseAdapter extends BaseAdapter {
     Context context;
-    List<StarInfoBean.StarinfoBean> mDatas;
+    List<StarInfo.StarinfoBean> mDatas;
 
-    public StarBaseAdapter(Context context, List<StarInfoBean.StarinfoBean> mDatas) {
+    public StarBaseAdapter(Context context, List<StarInfo.StarinfoBean> mDatas) {
         this.context = context;
         this.mDatas = mDatas;
         logoMap = AssetsUtils.getLogoImgMap();
@@ -56,7 +56,7 @@ public class StarBaseAdapter extends BaseAdapter {
             holder = (ViewHolder) convertView.getTag();
         }
         //获取指定位置的数据
-        StarInfoBean.StarinfoBean bean = mDatas.get(position);
+        StarInfo.StarinfoBean bean = mDatas.get(position);
         holder.tv.setText(bean.getName());
         //根据图片名称在内存当中进行查找图片
         String logoname = bean.getLogoname();

@@ -11,7 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-import com.example.androidapp.bean.StarInfoBean;
+import com.example.androidapp.bean.StarInfo;
 import com.example.androidapp.starfrag.StarFragment;
 import com.example.androidapp.utils.AssetsUtils;
 import com.google.gson.Gson;
@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
         mainRg.setOnCheckedChangeListener(this);
 
 //        将在星座相关数据  /assets/xzcontent/xzcontent.json
-        StarInfoBean jsonInfoBean = loadData();
+        StarInfo jsonInfoBean = loadData();
         Bundle bundle = new Bundle();
         bundle.putSerializable("info",jsonInfoBean);
 //        创建碎片对象
@@ -56,11 +56,11 @@ public class MainActivity extends AppCompatActivity implements  RadioGroup.OnChe
     }
 
 //    读取assets文件夹下的xzcontent.json文件
-    private StarInfoBean loadData() {
+    private StarInfo loadData() {
         String jsonFromAssets = AssetsUtils.getJsonFromAssets(this, "xzcontent/xzcontent.json");
         System.out.println(jsonFromAssets);
         Gson gson = new Gson();
-        StarInfoBean starInfoBean = gson.fromJson(jsonFromAssets, StarInfoBean.class);
+        StarInfo starInfoBean = gson.fromJson(jsonFromAssets, StarInfo.class);
         AssetsUtils.saveBitmapAssets(this,starInfoBean);
         return starInfoBean;
     }
