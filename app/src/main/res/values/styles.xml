@@ -10,4 +10,11 @@
         <item name = "android:textSize">12sp</item>
         <item name = "android:gravity">center</item>
     </style>
+<!--    全屏显示-->
+    <style name="TranslucentTheme" parent="Theme.AndroidApp">
+        <item name="android:windowFullscreen">true</item>
+    </style>
+<!--    全屏显示，有透明的状态栏-->
+    <style name="statusBar" parent="Theme.AndroidApp">
+    </style>
 </resources>
