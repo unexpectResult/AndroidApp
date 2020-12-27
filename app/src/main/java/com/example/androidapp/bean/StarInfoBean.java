@@ -1,4 +1,6 @@
 package com.example.androidapp.bean;
 
-public class StarInfoBean {
+import java.io.Serializable;
+
+public class StarInfoBean implements Serializable {
 }
