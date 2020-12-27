@@ -12,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
 import com.example.androidapp.bean.StarInfo;
+import com.example.androidapp.mefrag.MeFragment;
 import com.example.androidapp.starfrag.StarFragment;
 import com.example.androidapp.utils.AssetsUtils;
 import com.google.gson.Gson;

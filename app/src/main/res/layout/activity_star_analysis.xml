@@ -27,7 +27,7 @@
         android:padding="10sp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="白羊座"/>
+        android:text="@string/Aris"/>
 
     <TextView
         android:id="@+id/staranalysis_tv_date"
@@ -37,7 +37,7 @@
         android:padding="10sp"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:text="3月21日--4月19日"
+        android:text="@string/Date"
         android:background="@color/lightpink"
         android:textColor="@color/white"/>
 

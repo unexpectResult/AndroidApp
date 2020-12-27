@@ -17,4 +17,14 @@
 
     <string name="hello_first_fragment">Hello first fragment</string>
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="questions">反馈问题</string>
+    <string name="updlog">更新日志</string>
+    <string name="function">功能介绍</string>
+    <string name="Application">关于应用</string>
+    <string name="Aris">白羊座</string>
+    <string name="constellationInstruction">星座解析</string>
+    <string name="Date">3月21日--4月19日</string>
+    <string name="nature">性格特点 :</string>
+    <string name="humou">幽默大方</string>
+    <string name="aris">白羊座</string>
 </resources>

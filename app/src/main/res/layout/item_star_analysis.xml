@@ -16,7 +16,7 @@
         android:gravity="center"
         android:paddingLeft="10sp"
         android:textSize="18sp"
-        android:text="性格特点 :"/>
+        android:text="@string/nature"/>
 
     <TextView
         android:id="@+id/itemstar_tv_content"
@@ -27,6 +27,6 @@
         android:background="@color/lightpink"
         android:paddingLeft="10sp"
         android:textSize="18sp"
-        android:text="幽默大方"
+        android:text="@string/humou"
         android:textColor="@color/white"/>
 </LinearLayout>
